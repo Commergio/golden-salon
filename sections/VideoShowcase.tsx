@@ -42,27 +42,15 @@ export function VideoShowcase() {
               muted
               loop
               playsInline
+              preload="metadata"
               title="فيديو أجواء صالون اللمسة الذهبية"
               aria-label="عرض فيديو لأجواء الصالون الفاخر"
               className="h-full w-full object-cover"
-              poster="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&q=80"
+              poster="/images/amal-ghattas.png"
             >
-              <source
-                src="https://videos.pexels.com/video-files/853189/853189-hd_1920_1080_25fps.mp4"
-                type="video/mp4"
-              />
+              <source src="/videos/salonGolden_video.mp4" type="video/mp4" />
             </video>
-            <motion.div
-              className="absolute inset-0 bg-ivory/40 backdrop-blur-[1px]"
-              initial={{ opacity: 0.3 }}
-            />
-            <motion.p
-              className="absolute bottom-8 right-8 left-8 text-center font-playfair text-2xl text-charcoal drop-shadow-sm md:text-3xl"
-              animate={{ y: [0, -4, 0] }}
-              transition={{ duration: 4, repeat: Infinity }}
-            >
-              حيث يلتقي الجمال بالاسترخاء
-            </motion.p>
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-charcoal/30 to-transparent" />
             <motion.button
               onClick={togglePlay}
               className="absolute top-1/2 left-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-gold/35 bg-ivory/80 text-gold shadow-glass backdrop-blur transition-all hover:bg-gold/25"

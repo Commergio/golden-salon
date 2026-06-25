@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/Button";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { SITE } from "@/lib/data";
 import { scrollToSection } from "@/lib/utils";
-import { fadeUp, staggerContainer, luxuryEase } from "@/lib/motion";
+import { fadeUp, staggerContainer } from "@/lib/motion";
 
 const particles = Array.from({ length: 18 }, (_, i) => ({
   id: i,
@@ -35,29 +35,8 @@ export function Hero() {
       id="home"
       className="relative flex min-h-screen items-center justify-center overflow-hidden"
     >
-      {/* Video + layered overlays */}
-      <div className="absolute inset-0">
-        <motion.div
-          className="h-full w-full"
-          initial={{ scale: 1.08 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 2.2, ease: luxuryEase }}
-        >
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            title="أجواء صالون اللمسة الذهبية — صالون نسائي فاخر بالرياض"
-            aria-label="فيديو يعرض أجواء الصالون الفاخر"
-            className="h-full w-full object-cover brightness-[1.05] contrast-[1.02] saturate-[1.08]"
-            poster="/images/amal-ghattas.png"
-          >
-            <source src="/videos/salonGolden_video.mp4" type="video/mp4" />
-          </video>
-        </motion.div>
-
+      {/* Luxury static background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-champagne/90 via-cream to-ivory">
         <motion.div
           className="absolute inset-0 bg-hero-spotlight"
           initial={{ opacity: 0 }}

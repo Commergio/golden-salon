@@ -41,9 +41,9 @@ export function Footer() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="grid gap-10 md:grid-cols-2 lg:grid-cols-5"
+          className="grid min-w-0 gap-10 sm:grid-cols-2 lg:grid-cols-5"
         >
-          <motion.div variants={fadeUp} className="lg:col-span-2">
+          <motion.div variants={fadeUp} className="min-w-0 sm:col-span-2 lg:col-span-2">
             <Link href="/" className="mb-5 inline-block transition-transform hover:scale-[1.02]">
               <BrandLogo variant="footer" />
             </Link>
@@ -62,7 +62,7 @@ export function Footer() {
           </motion.div>
 
           {Object.values(FOOTER_SECTIONS).map((section) => (
-            <motion.div key={section.label} variants={fadeUp}>
+            <motion.div key={section.label} variants={fadeUp} className="min-w-0">
               <h3 className="mb-4 font-playfair text-lg text-gold">{section.label}</h3>
               <ul className="space-y-2">
                 {section.links.map((link) => (

@@ -32,13 +32,13 @@ export default function BlogMagazinePage() {
     <>
       <BlogListingJsonLd />
 
-      <div className="relative min-h-screen bg-section-light pt-28">
+      <div className="relative min-h-dvh bg-section-light pt-24 xs:pt-28">
         <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
           <div className="absolute -right-32 top-20 h-96 w-96 rounded-full bg-gold/10 blur-3xl" />
           <div className="absolute -left-24 bottom-40 h-80 w-80 rounded-full bg-champagne/60 blur-3xl" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
+        <div className="relative mx-auto max-w-7xl px-4 xs:px-5 md:px-8 lg:px-12">
           <BlogBreadcrumbs items={[{ label: "الرئيسية", href: "/" }, { label: "مجلة الجمال" }]} />
 
           {/* Hero */}
@@ -54,12 +54,12 @@ export default function BlogMagazinePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-l from-charcoal/75 via-charcoal/40 to-charcoal/20" />
             </div>
-            <div className="relative px-6 py-16 md:px-12 md:py-24">
+            <div className="relative px-4 py-12 xs:px-6 xs:py-16 md:px-12 md:py-24">
               <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-ivory/20 px-4 py-1.5 font-cairo text-xs text-ivory backdrop-blur">
                 <BookOpen className="h-4 w-4 text-gold-light" />
                 مجلة الجمال والعناية
               </span>
-              <h1 className="max-w-3xl font-playfair text-4xl font-bold leading-tight text-ivory md:text-5xl lg:text-6xl">
+              <h1 className="max-w-3xl font-playfair text-3xl font-bold leading-tight text-ivory xs:text-4xl md:text-5xl lg:text-6xl">
                 مجلة الجمال والعناية
               </h1>
               <p className="mt-5 max-w-2xl font-cairo text-base leading-relaxed text-ivory/90 md:text-xl">

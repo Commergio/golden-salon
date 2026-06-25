@@ -47,8 +47,8 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       <ReadingProgress />
       <BackToTop />
 
-      <article className="relative min-h-screen bg-section-light pt-28">
-        <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
+      <article className="relative min-h-screen bg-section-light pt-24 xs:pt-28 md:pt-32">
+        <div className="mx-auto max-w-7xl px-4 xs:px-5 md:px-8 lg:px-12">
           <BlogBreadcrumbs
             items={[
               { label: "الرئيسية", href: "/" },
@@ -65,7 +65,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               <Tag className="h-3.5 w-3.5" />
               {post.categoryLabel}
             </Link>
-            <h1 className="font-playfair text-3xl font-bold leading-tight text-charcoal md:text-4xl lg:text-5xl">
+            <h1 className="font-playfair text-2xl font-bold leading-tight text-charcoal xs:text-3xl md:text-4xl lg:text-5xl">
               {post.title}
             </h1>
             <p className="mt-5 font-cairo text-lg leading-relaxed text-warm-gray">{post.excerpt}</p>
@@ -102,9 +102,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             </div>
           </div>
 
-          <div className="mx-auto mt-12 grid max-w-6xl gap-10 lg:grid-cols-[240px_1fr]">
-            <aside className="hidden lg:block">
-              <div className="sticky top-28 space-y-6">
+          <div className="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-10 lg:grid-cols-[240px_1fr]">
+            <aside className="min-w-0 lg:sticky lg:top-28 lg:self-start">
+              <div className="space-y-6">
                 <ArticleTOC post={post} />
               </div>
             </aside>
@@ -122,7 +122,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               <h2 id="related" className="mb-8 font-playfair text-2xl font-semibold text-charcoal">
                 مقالات ذات صلة
               </h2>
-              <div className="grid gap-8 md:grid-cols-3">
+              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                 {related.map((p, i) => (
                   <MagazineCard key={p.slug} post={p} index={i} />
                 ))}

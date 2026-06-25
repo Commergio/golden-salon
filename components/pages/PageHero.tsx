@@ -18,7 +18,7 @@ export function PageHero({ title, subtitle, badge, className, children }: PageHe
   return (
     <section
       className={cn(
-        "relative overflow-hidden bg-gradient-to-b from-champagne/40 via-cream to-cream pt-32 pb-16 md:pt-40 md:pb-20",
+        "relative overflow-hidden bg-gradient-to-b from-champagne/40 via-cream to-cream pt-24 pb-12 xs:pt-28 xs:pb-14 md:pt-36 md:pb-20",
         className
       )}
     >
@@ -35,7 +35,7 @@ export function PageHero({ title, subtitle, badge, className, children }: PageHe
         aria-hidden
       />
 
-      <div className="relative mx-auto max-w-4xl px-5 text-center md:px-8">
+      <div className="relative mx-auto max-w-4xl px-4 text-center xs:px-5 md:px-8">
         {badge && (
           <motion.span
             initial={{ opacity: 0, y: 16 }}
@@ -51,7 +51,7 @@ export function PageHero({ title, subtitle, badge, className, children }: PageHe
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          className="font-playfair text-3xl font-bold text-charcoal md:text-5xl lg:text-[3rem]"
+          className="font-playfair text-2xl font-bold text-charcoal xs:text-3xl md:text-5xl lg:text-[3rem]"
         >
           {title}
         </motion.h1>

@@ -33,7 +33,7 @@ export function VideoShowcase() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-gold/30 shadow-luxury-gold glow-gold"
+          className="relative mx-auto w-full max-w-5xl overflow-hidden rounded-2xl border border-gold/30 shadow-luxury-gold glow-gold xs:rounded-3xl"
         >
           <div className="relative aspect-video">
             <video
@@ -53,7 +53,7 @@ export function VideoShowcase() {
             <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-charcoal/30 to-transparent" />
             <motion.button
               onClick={togglePlay}
-              className="absolute top-1/2 left-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-gold/35 bg-ivory/80 text-gold shadow-glass backdrop-blur transition-all hover:bg-gold/25"
+              className="absolute top-1/2 left-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-gold/35 bg-ivory/80 text-gold shadow-glass backdrop-blur transition-all hover:bg-gold/25 xs:h-14 xs:w-14 sm:h-16 sm:w-16"
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.95 }}
               aria-label={playing ? "إيقاف" : "تشغيل"}

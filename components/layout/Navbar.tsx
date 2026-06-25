@@ -8,6 +8,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { SITE } from "@/lib/data";
 import { PRIMARY_NAV, MEGA_MENU } from "@/lib/pages/routes";
+import { useBodyScrollLock } from "@/hooks/useBodyScrollLock";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
@@ -16,6 +17,8 @@ export function Navbar() {
   const [megaOpen, setMegaOpen] = useState(false);
   const megaRef = useRef<HTMLLIElement>(null);
   const pathname = usePathname();
+
+  useBodyScrollLock(mobileOpen);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -57,7 +60,7 @@ export function Navbar() {
       )}
     >
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between px-5 md:px-8 lg:px-12"
+        className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 xs:px-5 md:px-8 lg:px-12"
         aria-label="التنقل الرئيسي"
       >
         <Link href="/" className="group shrink-0 transition-transform hover:scale-[1.02]" aria-label="الصفحة الرئيسية — صالون اللمسة الذهبية">
@@ -108,9 +111,9 @@ export function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 8 }}
                   transition={{ duration: 0.25 }}
-                  className="absolute right-0 top-full z-50 mt-3 w-[640px] rounded-3xl border border-gold/25 bg-cream/95 p-6 shadow-luxury-gold backdrop-blur-xl"
+                  className="absolute right-0 top-full z-50 mt-3 w-[min(640px,calc(100vw-2rem))] max-w-[calc(100vw-2rem)] rounded-3xl border border-gold/25 bg-cream/95 p-4 shadow-luxury-gold backdrop-blur-xl sm:p-6"
                 >
-                  <div className="grid grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
                     {Object.values(MEGA_MENU).map((group) => (
                       <div key={group.label}>
                         <p className="mb-3 font-playfair text-sm font-semibold text-gold">{group.label}</p>
@@ -189,7 +192,7 @@ export function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-y-0 left-0 z-50 w-full max-w-sm border-l border-gold/20 bg-cream/98 shadow-2xl backdrop-blur-xl lg:hidden"
+            className="fixed inset-y-0 left-0 z-50 w-[min(100vw,20rem)] border-l border-gold/20 bg-cream/98 shadow-2xl backdrop-blur-xl safe-top safe-bottom lg:hidden"
           >
             <div className="flex h-full flex-col overflow-y-auto px-6 py-8">
               <div className="mb-8 flex items-center justify-between gap-4">

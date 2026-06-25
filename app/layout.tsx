@@ -40,6 +40,8 @@ export const viewport: Viewport = {
   themeColor: "#F8F6F2",
   width: "device-width",
   initialScale: 1,
+  maximumScale: 5,
+  viewportFit: "cover",
   colorScheme: "light",
 };
 
@@ -54,12 +56,12 @@ export default function RootLayout({
       dir="rtl"
       className={`${cairo.variable} ${tajawal.variable} ${playfair.variable}`}
     >
-      <body className="relative min-h-screen">
+      <body className="relative min-h-dvh overflow-x-clip">
         <SkipLink />
         <JsonLd />
         <ClientEffects />
         <Navbar />
-        <main id="main-content" className="relative z-10">
+        <main id="main-content" className="relative z-10 w-full overflow-x-clip">
           {children}
         </main>
         <Footer />

@@ -33,7 +33,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden"
+      className="relative flex min-h-dvh items-center justify-center overflow-hidden pt-24 pb-20 xs:pt-28 sm:pt-32"
     >
       {/* Luxury static background */}
       <div className="absolute inset-0 bg-gradient-to-b from-champagne/90 via-cream to-ivory">
@@ -100,7 +100,7 @@ export function Hero() {
         variants={staggerContainer}
         initial="hidden"
         animate="visible"
-        className="relative z-10 mx-auto w-full max-w-5xl px-5 md:px-8"
+        className="relative z-10 mx-auto w-full max-w-5xl px-4 xs:px-5 md:px-8"
       >
         <div className="hero-glass-panel">
           <motion.div
@@ -118,7 +118,7 @@ export function Hero() {
 
           <motion.span
             variants={fadeUp}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-white/90 px-5 py-2.5 font-cairo text-xs font-medium text-charcoal shadow-sm backdrop-blur-md md:text-sm"
+            className="mb-6 inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-gold/40 bg-white/90 px-4 py-2 font-cairo text-[11px] font-medium text-charcoal shadow-sm backdrop-blur-md xs:px-5 xs:py-2.5 xs:text-xs md:text-sm"
           >
             <motion.span
               animate={{ rotate: [0, 15, -15, 0] }}
@@ -132,7 +132,7 @@ export function Hero() {
 
           <motion.h1
             variants={fadeUp}
-            className="font-playfair text-xl font-semibold leading-relaxed text-charcoal md:text-2xl lg:text-3xl"
+            className="font-playfair text-lg font-semibold leading-relaxed text-charcoal xs:text-xl md:text-2xl lg:text-3xl"
           >
             {SITE.tagline}
           </motion.h1>
@@ -141,7 +141,7 @@ export function Hero() {
 
           <motion.p
             variants={fadeUp}
-            className="mx-auto max-w-2xl font-cairo text-base font-medium leading-relaxed text-charcoal/90 md:text-lg"
+            className="mx-auto max-w-2xl font-cairo text-sm font-medium leading-relaxed text-charcoal/90 xs:text-base md:text-lg"
           >
             نغيّر مفهوم الصالون من تجميل إلى{" "}
             <span className="font-semibold text-gold">ترميم ونتائج تدوم</span>
@@ -154,7 +154,7 @@ export function Hero() {
             {highlights.map(({ icon: Icon, label }) => (
               <li
                 key={label}
-                className="flex items-center gap-2 rounded-full border border-gold/25 bg-white/70 px-4 py-2 font-cairo text-xs text-charcoal shadow-sm backdrop-blur-sm transition-colors hover:border-gold/45 hover:bg-gold/5 md:text-sm"
+                className="flex max-w-full items-center gap-2 rounded-full border border-gold/25 bg-white/70 px-3 py-2 font-cairo text-[11px] text-charcoal shadow-sm backdrop-blur-sm transition-colors hover:border-gold/45 hover:bg-gold/5 xs:px-4 xs:text-xs md:text-sm"
               >
                 <Icon className="h-4 w-4 shrink-0 text-gold" strokeWidth={1.75} />
                 {label}
@@ -164,11 +164,11 @@ export function Hero() {
 
           <motion.div
             variants={fadeUp}
-            className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center"
+            className="mt-10 flex w-full flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center"
           >
             <Button
               href={SITE.whatsapp}
-              className="animate-pulse-glow shadow-luxury-gold sm:min-w-[180px]"
+              className="w-full animate-pulse-glow shadow-luxury-gold sm:w-auto sm:min-w-[180px]"
             >
               <CalendarCheck className="h-4 w-4" />
               احجزي الآن
@@ -176,7 +176,7 @@ export function Hero() {
             <Button
               href={SITE.whatsapp}
               variant="outline"
-              className="border-gold/50 bg-white/80 sm:min-w-[180px]"
+              className="w-full border-gold/50 bg-white/80 sm:w-auto sm:min-w-[180px]"
             >
               <MessageCircle className="h-4 w-4" />
               واتساب مباشر
@@ -184,7 +184,7 @@ export function Hero() {
             <Button
               variant="outline"
               onClick={() => scrollToSection("services")}
-              className="border-gold/40 bg-white/60 sm:min-w-[160px]"
+              className="w-full border-gold/40 bg-white/60 sm:w-auto sm:min-w-[160px]"
             >
               شاهد الخدمات
             </Button>
@@ -194,7 +194,7 @@ export function Hero() {
 
       <motion.button
         onClick={() => scrollToSection("about")}
-        className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-1 rounded-full border border-gold/30 bg-ivory/80 px-4 py-2 text-gold shadow-glass backdrop-blur-md transition-colors hover:border-gold/50 hover:bg-gold/10"
+        className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-1 rounded-full border border-gold/30 bg-ivory/80 px-4 py-2 text-gold shadow-glass backdrop-blur-md transition-colors hover:border-gold/50 hover:bg-gold/10 safe-bottom xs:bottom-6"
         animate={{ y: [0, 6, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
         aria-label="انتقلي للأسفل"

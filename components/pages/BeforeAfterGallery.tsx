@@ -25,7 +25,10 @@ function ComparisonCard({
       <div className="relative aspect-[16/10] select-none">
         <Image src={item.after} alt={`بعد — ${item.title}`} fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
         <div className="absolute inset-0 overflow-hidden" style={{ width: `${position}%` }}>
-          <div className="relative h-full w-[100vw] max-w-none" style={{ width: `${100 / (position / 100)}%` }}>
+          <div
+            className="relative h-full"
+            style={{ width: position > 0 ? `${(100 / position) * 100}%` : "100%" }}
+          >
             <Image src={item.before} alt={`قبل — ${item.title}`} fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
           </div>
         </div>

@@ -49,7 +49,7 @@ export default function ContactPage() {
           <iframe
             title={`موقع ${SITE.name}`}
             src={SITE.mapEmbed}
-            className="h-80 w-full md:h-96"
+            className="h-64 w-full xs:h-72 md:h-96"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />
